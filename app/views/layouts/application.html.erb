@@ -8,7 +8,9 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
+    <% flash.each do |type, msg| %>
+    <%= content_tag :div, msg, class: "flash_#{type}" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
-
