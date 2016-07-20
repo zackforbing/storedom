@@ -1,4 +1,4 @@
-require_relative '../test_helper'
+require 'test_helper'
 
 class UserLoginTest < ActionDispatch::IntegrationTest
 
@@ -35,11 +35,15 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
   test "a user can logout" do
     user = User.create(username: "andrew", password: "password")
-    ApplicationController.any_instance.stubs(:current_user).returns(user)
+
+    visit login_path
+
+    fill_in 'session[username]', with: "Zack"
+    fill_in 'session[password]', with: "password"
 
     assert page.has_content?("andrew")
 
-    click_on "logout"
+    click_on "Log out"
 
     assert_equal root_path, current_path
     refute page.has_content?("andrew")
