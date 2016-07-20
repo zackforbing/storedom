@@ -29,6 +29,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.11)
     builder (3.2.2)
     capybara (2.7.1)
       addressable
@@ -72,6 +73,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile2 (2.1.0)
@@ -90,6 +92,8 @@ GEM
       minitest-capybara (~> 0.8)
       minitest-metadata (~> 0.6)
       minitest-rails (~> 2.1)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.12.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -161,6 +165,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   coffee-rails (~> 4.0.0)
   faker
   jbuilder (~> 2.0)
@@ -168,6 +173,7 @@ DEPENDENCIES
   less-rails-bootstrap
   minitest-rails
   minitest-rails-capybara
+  mocha
   pry
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)

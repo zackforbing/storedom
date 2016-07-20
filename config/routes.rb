@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :items,  only: [:index, :show]
   resources :orders, only: [:index, :show]
   resources :users,  only: [:index, :show]
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 end

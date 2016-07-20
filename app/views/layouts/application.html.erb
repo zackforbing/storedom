@@ -7,6 +7,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <% if current_user %>
+      <h1><%= current_user.username %></h1>
+    <% end %>
     <%= render 'layouts/navbar' %>
     <% flash.each do |type, msg| %>
     <%= content_tag :div, msg, class: "flash_#{type}" %>
